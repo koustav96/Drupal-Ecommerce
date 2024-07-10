@@ -1,0 +1,9 @@
+uuid: 29b6a43b-2be1-4ebf-827f-f23825c7a0dc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Type'
+vid: product_type
+description: null
+weight: 0
+new_revision: false

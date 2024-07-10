@@ -1,0 +1,25 @@
+uuid: 9b5b6521-25f3-485c-a175-a649becb7679
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5c3c74e6-1129-4dc9-9663-3b9e48c679c0'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_becomeuser
+theme: olivero
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'block_content:5c3c74e6-1129-4dc9-9663-3b9e48c679c0'
+settings:
+  id: 'block_content:5c3c74e6-1129-4dc9-9663-3b9e48c679c0'
+  label: 'become user'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
