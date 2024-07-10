@@ -1,0 +1,38 @@
+uuid: cbbd261d-15c4-4399-b5fa-e1d1d165c233
+langcode: en
+status: true
+dependencies:
+  module:
+    - eca_content
+id: send_mail_after_content_creation
+modeller: core
+label: 'Send Mail after content creation'
+version: ''
+weight: 0
+events:
+  content_entity_insert:
+    plugin: 'content_entity:insert'
+    label: 'Insert content entity'
+    configuration:
+      type: 'node _all'
+    successors:
+      -
+        id: action_send_email_action
+        condition: eca_entity_is_new
+conditions:
+  eca_entity_is_new:
+    plugin: eca_entity_is_new
+    configuration:
+      negate: true
+      entity: ''
+gateways: {  }
+actions:
+  action_send_email_action:
+    plugin: action_send_email_action
+    label: 'Send email'
+    configuration:
+      recipient: Super.admin@flipkart.com
+      subject: 'New Content Created'
+      message: "User name : [user:account-name] created a new content [node:title] .\r\n[node:url] .\r\n"
+      replace_tokens: true
+    successors: {  }

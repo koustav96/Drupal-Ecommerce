@@ -1,0 +1,21 @@
+uuid: 8de9fb92-d5af-4c6d-9ba7-c33ed44c1dd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.items
+  module:
+    - admin_toolbar_search
+    - node
+    - toolbar
+id: content_admin_3
+label: 'Content admin 3'
+weight: 6
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create items content'
+  - 'delete own items content'
+  - 'edit own items content'
+  - 'use admin toolbar search'

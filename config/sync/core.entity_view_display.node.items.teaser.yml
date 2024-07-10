@@ -1,0 +1,68 @@
+uuid: 6e1c76ea-ed2b-49b7-a7af-657a760fd172
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.items.body
+    - field.field.node.items.field_image
+    - field.field.node.items.field_price
+    - field.field.node.items.field_type
+    - image.style.custom_image_type
+    - node.type.items
+  module:
+    - image
+    - smart_trim
+    - user
+id: node.items.teaser
+targetEntityType: node
+bundle: items
+mode: teaser
+content:
+  body:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 15
+      trim_type: words
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: ignore
+      trim_options:
+        text: false
+        trim_zero: false
+        replace_tokens: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: custom_image_type
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_price:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_type: true
+  links: true
